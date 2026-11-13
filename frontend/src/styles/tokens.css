@@ -1,0 +1,43 @@
+/*
+ * KHABARDAR design tokens -- the SINGLE SOURCE OF TRUTH for the palette.
+ *
+ * Fixed brand/palette values are defined once in :root. Theme-aware semantic
+ * tokens (bg / surface / fg / accent) are re-mapped per theme via the
+ * `[data-theme="..."]` attribute set on <html>. Components must consume the
+ * semantic tokens (or the named palette tokens) via Tailwind utilities
+ * (e.g. `bg-bg`, `text-fg`, `text-danger`) and must NOT hardcode hex values.
+ */
+
+:root {
+  /* Fixed brand palette (exact approved values). */
+  --color-deep-navy: #101d31;
+  --color-midnight-blue: #172a45;
+  --color-metallic-silver: #c5d0dc;
+  --color-electric-blue: #3987ff;
+  --color-surface-light: #f4f7fb;
+  --color-surface-dark: #0b1423;
+
+  /* Risk severity (identical across themes for consistent meaning). */
+  --color-danger: #e5484d;
+  --color-warning: #e5a323;
+  --color-safe: #1c9b70;
+}
+
+/* Dark theme (first-visit default). */
+:root,
+[data-theme="dark"] {
+  --color-bg: var(--color-deep-navy);
+  --color-surface: var(--color-midnight-blue);
+  --color-fg: var(--color-metallic-silver);
+  --color-accent: var(--color-electric-blue);
+  color-scheme: dark;
+}
+
+/* Light theme. */
+[data-theme="light"] {
+  --color-bg: var(--color-surface-light);
+  --color-surface: #ffffff;
+  --color-fg: var(--color-deep-navy);
+  --color-accent: var(--color-electric-blue);
+  color-scheme: light;
+}

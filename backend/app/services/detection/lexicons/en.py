@@ -1,0 +1,148 @@
+"""English lexicon for rule-based detection (Task 2.6).
+
+INITIAL heuristic keyword/phrase set per signal id. Not exhaustive; intended to
+catch the most common Pakistani-context scam phrasings in English. Terms are
+lower-case; matching normalizes the input to lower-case Latin first.
+
+Signal ids match ``signals.SIGNALS``.
+"""
+
+from __future__ import annotations
+
+LEXICON: dict[str, list[str]] = {
+    "urgency_threat": [
+        "urgent",
+        "immediately",
+        "right now",
+        "act now",
+        "within 24 hours",
+        "last warning",
+        "final notice",
+        "expire",
+        "expires today",
+        "failure to comply",
+    ],
+    "account_suspension": [
+        "account will be blocked",
+        "account blocked",
+        "account suspended",
+        "account will be suspended",
+        "account has been locked",
+        "verify your account",
+        "verify immediately",
+        "reactivate your account",
+        "account deactivated",
+        "confirm your identity",
+    ],
+    "otp_request": [
+        "share your otp",
+        "send your otp",
+        "provide your otp",
+        "enter your otp",
+        "give me the otp",
+        "tell me the otp",
+        "share the code",
+        "send the verification code",
+        "provide the pin",
+        "share your pin",
+    ],
+    "credential_request": [
+        "enter your password",
+        "send your password",
+        "your atm pin",
+        "card number",
+        "cvv",
+        "login credentials",
+        "username and password",
+        "net banking password",
+        "account number and pin",
+        "cnic number",
+    ],
+    "payment_demand": [
+        "transfer the money",
+        "send money",
+        "pay the fee",
+        "processing fee",
+        "advance payment",
+        "clearance fee",
+        "deposit",
+        "jazzcash",
+        "easypaisa",
+        "send payment to",
+    ],
+    "prize_lottery": [
+        "you have won",
+        "congratulations you won",
+        "lottery",
+        "lucky draw",
+        "prize",
+        "giveaway",
+        "claim your reward",
+        "you are selected",
+        "cash prize",
+        "free gift",
+    ],
+    "authority_impersonation": [
+        "state bank",
+        "fbr",
+        "nadra",
+        "customs",
+        "police",
+        "court notice",
+        "tcs",
+        "leopards courier",
+        "from the bank",
+        "government of pakistan",
+    ],
+    "suspicious_link": [
+        "click the link",
+        "click here",
+        "tap the link",
+        "open this link",
+        "verify at",
+        "login at",
+        "bit.ly",
+        "tinyurl",
+        ".xyz",
+        "http://",
+    ],
+    "app_install": [
+        "install the app",
+        "download the app",
+        "install apk",
+        "download this file",
+        "install anydesk",
+        "install teamviewer",
+        "download attachment",
+        "run the setup",
+    ],
+    "social_pressure": [
+        "do not tell anyone",
+        "keep this confidential",
+        "this is a secret",
+        "trust me",
+        "only you are selected",
+        "don't share with family",
+        "act before it is too late",
+        "you will lose",
+    ],
+}
+
+# Negation / protective cues: when one of these appears NEAR an otp/credential
+# cue, the cue is treated as protective advice (a warning), NOT a request.
+NEGATION_CUES: list[str] = [
+    "never share",
+    "do not share",
+    "don't share",
+    "do not give",
+    "never give",
+    "never tell",
+    "do not tell",
+    "should not share",
+    "no one should ask",
+    "nobody will ask",
+    "beware",
+    "warning",
+    "protect your",
+    "keep your otp safe",
+]

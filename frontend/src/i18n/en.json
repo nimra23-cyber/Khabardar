@@ -1,0 +1,147 @@
+{
+  "app": {
+    "name": "KHABARDAR",
+    "tagline": "Think Before You Trust."
+  },
+  "theme": {
+    "label": "Theme",
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme"
+  },
+  "language": {
+    "label": "Language",
+    "english": "English",
+    "urdu": "Urdu",
+    "romanUrdu": "Roman Urdu"
+  },
+  "provisional": {
+    "notice": "Provisional view. The full dashboard arrives in a later step."
+  },
+  "nav": {
+    "ariaLabel": "Primary navigation",
+    "dashboard": "Dashboard",
+    "detector": "Scam Detector",
+    "url": "URL Analyzer",
+    "scanner": "Screenshot & QR Scanner",
+    "intelligence": "Threat Intelligence",
+    "honeypot": "Honeypot Simulation Lab",
+    "family": "Family Protection",
+    "history": "Scan History",
+    "reports": "Reports",
+    "settings": "Settings",
+    "about": "About"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Choose a tool to get started."
+  },
+  "detector": {
+    "subtitle": "Paste a suspicious message to check it for scam indicators. Analysis runs locally.",
+    "inputLabel": "Suspicious message",
+    "placeholder": "Paste the SMS, WhatsApp, or email text here...",
+    "analyze": "Analyze",
+    "analyzing": "Analyzing...",
+    "category": "Category",
+    "signalsTitle": "Detected signals",
+    "noSignals": "No contributing signals were detected.",
+    "evidence": "Evidence",
+    "explanationEn": "Explanation (English)",
+    "explanationUr": "Explanation (Urdu)",
+    "ruleset": "Ruleset",
+    "saveError": "The result could not be saved to history, but your analysis is shown above.",
+    "empty": "No scans yet. Analyze a message to see it here."
+  },
+  "history": {
+    "title": "Scan History",
+    "subtitle": "Your recent analyses (sensitive values are masked).",
+    "empty": "No scans yet. Analyze a message in the Scam Detector to see it here.",
+    "colContent": "Masked content",
+    "colScore": "Score",
+    "colClass": "Classification",
+    "colWhen": "When"
+  },
+  "reports": {
+    "subtitle": "Analyze a message, then generate and download a shareable report of the result.",
+    "placeholder": "Paste the message to report on...",
+    "analyze": "Analyze",
+    "analyzing": "Analyzing...",
+    "analyzed": "Analyzed",
+    "generate": "Generate report",
+    "generating": "Generating...",
+    "download": "Download report (.md)"
+  },
+  "intel": {
+    "prototype": "Prototype intelligence environment — not a live nationwide feed.",
+    "overview": "Overview",
+    "totalScans": "Total scans",
+    "detectedScams": "Detected scams",
+    "emptyState": "No scans recorded yet. Metrics will populate as scans are analyzed (history is disabled in the public demo).",
+    "iocTitle": "Indicator extraction",
+    "iocSubtitle": "Extract indicators (URLs, domains, IPs, emails, phones, wallets) from text. Sensitive values are masked; nothing is fetched.",
+    "iocPlaceholder": "Paste suspicious text to extract indicators...",
+    "extract": "Extract indicators",
+    "extracting": "Extracting...",
+    "iocNone": "No indicators found in the submitted text."
+  },
+  "url": {
+    "subtitle": "Check a link for phishing indicators. Analysis is local; the link is never opened or fetched.",
+    "inputLabel": "URL to analyze",
+    "analyze": "Analyze URL",
+    "analyzing": "Analyzing...",
+    "domain": "Domain",
+    "recommended": "Recommended action",
+    "indicators": "Indicators",
+    "noIndicators": "No local phishing indicators detected (not a guarantee of safety).",
+    "integrations": "External reputation services",
+    "blocked": "This URL resolves to a private/internal/metadata address and was blocked for security. It was not contacted."
+  },
+  "settings": {
+    "appearance": "Appearance",
+    "retention": "Data retention"
+  },
+  "about": {
+    "body": "KHABARDAR helps ordinary people spot online scams, phishing, and fraud across English, Urdu, and Roman Urdu.",
+    "prototypeNote": "This is a local prototype environment, not a live nationwide service."
+  },
+  "scanner": {
+    "subtitle": "Upload a screenshot or QR code image to extract text, detect QR links, and analyze for threats.",
+    "selectImage": "Select image (PNG, JPEG, WEBP — max 10 MB)",
+    "analyze": "Analyze Image",
+    "analyzing": "Analyzing...",
+    "ocrTitle": "Extracted Text (OCR)",
+    "qrTitle": "QR Code Values",
+    "urlsTitle": "URLs Found",
+    "textAnalysis": "Text Analysis",
+    "urlAnalysis": "URL Analysis",
+    "noText": "No text detected in this image.",
+    "noQr": "No QR codes found in this image.",
+    "noUrls": "No URLs detected.",
+    "ocrUnavailable": "OCR engine not available on this server.",
+    "qrUnavailable": "QR decoder not available on this server.",
+    "invalidFile": "Invalid file. Please upload a valid PNG, JPEG, or WEBP image.",
+    "fileTooLarge": "File is too large. Maximum size is 10 MB.",
+    "preview": "Image preview",
+    "openInAnalyzer": "Analyze in URL Analyzer"
+  },
+  "unavailable": {
+    "notImplemented": "This functionality is not implemented yet. It will be added in a later step.",
+    "scopeB": "This is an advanced capability planned for a future release. It is not available yet.",
+    "disabledAction": "Not available yet"
+  },
+  "home": {
+    "designSystem": {
+      "title": "Design system online",
+      "body": "Theme tokens, dark default, and responsive breakpoints are active."
+    },
+    "riskSeverity": {
+      "title": "Risk severity",
+      "safe": "SAFE",
+      "suspicious": "SUSPICIOUS",
+      "highRisk": "HIGH RISK"
+    },
+    "localOnly": {
+      "title": "Local-only",
+      "body": "Runs locally. No data leaves this machine."
+    }
+  }
+}

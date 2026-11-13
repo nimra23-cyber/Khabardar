@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KHABARDAR</title>
+    <!--
+      Pre-hydration theme bootstrap: apply the saved (or default dark) theme to
+      <html> BEFORE React mounts, to avoid a flash of the wrong theme (FOUC).
+      Mirrors ThemeContext's storage key and fallback rules. Kept tiny and
+      dependency-free on purpose.
+    -->
+    <script>
+      (function () {
+        try {
+          var KEY = 'khabardar.theme';
+          var saved = null;
+          try { saved = window.localStorage.getItem(KEY); } catch (e) { saved = null; }
+          var theme = saved === 'light' || saved === 'dark' ? saved : 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+    <!--
+      Pre-render language bootstrap: apply the saved language's lang/dir to
+      <html> BEFORE React mounts, so a previously-selected Urdu session does not
+      flash in LTR first. Mirrors the i18n storage key and support/dir rules.
+      Independent of, and does not alter, the theme bootstrap above.
+    -->
+    <script>
+      (function () {
+        try {
+          var KEY = 'khabardar.lang';
+          var supported = { en: 1, ur: 1, 'ur-Latn': 1 };
+          var saved = null;
+          try { saved = window.localStorage.getItem(KEY); } catch (e) { saved = null; }
+          var lang = saved && supported[saved] ? saved : 'en';
+          var dir = lang === 'ur' ? 'rtl' : 'ltr';
+          document.documentElement.setAttribute('lang', lang);
+          document.documentElement.setAttribute('dir', dir);
+        } catch (e) {
+          document.documentElement.setAttribute('lang', 'en');
+          document.documentElement.setAttribute('dir', 'ltr');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+# Render deployment blueprint for the KHABARDAR backend (FastAPI).
+#
+# SECURITY NOTE: the MVP has NO authentication (Req 18 / Scope B is not built).
+# A public backend is therefore a SINGLE-USER PUBLIC DEMO with no access
+# control. Do not store real personal data. See docs/DEPLOYMENT.md for the
+# exposure limitations. Binding to 0.0.0.0 is required by the host to receive
+# traffic; this is an explicit, documented deviation from local-only mode for
+# the demo only.
+services:
+  - type: web
+    name: khabardar-backend
+    runtime: docker
+    region: oregon
+    plan: free
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    startCommand: "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    healthCheckPath: /api/health
+    envVars:
+      # Host must be 0.0.0.0 for the platform to route traffic to the container.
+      - key: KHABARDAR_HOST
+        value: 0.0.0.0
+      # PUBLIC DEMO MODE: disables scan-history persistence and the
+      # /api/history endpoint so no shared, unauthenticated record store is
+      # exposed. Text detection still works fully. MUST be true for any public
+      # deployment of this unauthenticated MVP.
+      - key: KHABARDAR_PUBLIC_DEMO
+        value: "true"
+      # Set to the deployed frontend origin(s), comma-separated. NO wildcard.
+      - key: KHABARDAR_CORS_ORIGINS
+        sync: false
+      # Persistent SQLite on a Render disk (single instance, single user demo).
+      - key: KHABARDAR_DATABASE_URL
+        value: sqlite:////var/data/khabardar.db
+      # Strong per-install salt (>=32 chars). Generate and set as a secret.
+      - key: KHABARDAR_HASH_SALT
+        sync: false
+    disk:
+      name: khabardar-data
+      mountPath: /var/data
+      sizeGB: 1

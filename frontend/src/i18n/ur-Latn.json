@@ -1,0 +1,147 @@
+{
+  "app": {
+    "name": "KHABARDAR",
+    "tagline": "Bharosa karne se pehle sochein."
+  },
+  "theme": {
+    "label": "Theme",
+    "switchToLight": "Light theme par jayen",
+    "switchToDark": "Dark theme par jayen"
+  },
+  "language": {
+    "label": "Zaban",
+    "english": "English",
+    "urdu": "Urdu",
+    "romanUrdu": "Roman Urdu"
+  },
+  "provisional": {
+    "notice": "Aarzi view. Mukammal dashboard baad ke marhale mein aayega."
+  },
+  "nav": {
+    "ariaLabel": "Bunyadi navigation",
+    "dashboard": "Dashboard",
+    "detector": "Scam Detector",
+    "url": "URL Analyzer",
+    "scanner": "Screenshot aur QR Scanner",
+    "intelligence": "Threat Intelligence",
+    "honeypot": "Honeypot Simulation Lab",
+    "family": "Family Protection",
+    "history": "Scan History",
+    "reports": "Reports",
+    "settings": "Settings",
+    "about": "Taaruf"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Shuru karne ke liye koi tool chunein."
+  },
+  "detector": {
+    "subtitle": "Mashkook message yahan paste karein taake scam ke aasar check ho sakein. Tajziya local tor par hota hai.",
+    "inputLabel": "Mashkook message",
+    "placeholder": "SMS, WhatsApp ya email ka text yahan paste karein...",
+    "analyze": "Tajziya karein",
+    "analyzing": "Tajziya ho raha hai...",
+    "category": "Qisam",
+    "signalsTitle": "Pehchane gaye aasar",
+    "noSignals": "Koi mawin aasar nahi mile.",
+    "evidence": "Saboot",
+    "explanationEn": "Wazahat (English)",
+    "explanationUr": "Wazahat (Urdu)",
+    "ruleset": "Ruleset",
+    "saveError": "Natija history mein save nahi ho saka, lekin aap ka tajziya upar dikhaya gaya hai.",
+    "empty": "Abhi koi scan nahi. Message ka tajziya karein taake yahan nazar aaye."
+  },
+  "history": {
+    "title": "Scan History",
+    "subtitle": "Aap ke haaliya tajziye (sensitive values chupai gayi hain).",
+    "empty": "Abhi koi scan nahi. Scam Detector mein message ka tajziya karein taake yahan nazar aaye.",
+    "colContent": "Masked content",
+    "colScore": "Score",
+    "colClass": "Classification",
+    "colWhen": "Kab"
+  },
+  "reports": {
+    "subtitle": "Message ka tajziya karein, phir result ki shareable report banayein aur download karein.",
+    "placeholder": "Report ke liye message paste karein...",
+    "analyze": "Tajziya karein",
+    "analyzing": "Tajziya ho raha hai...",
+    "analyzed": "Tajziya ho gaya",
+    "generate": "Report banayein",
+    "generating": "Ban rahi hai...",
+    "download": "Report download karein (.md)"
+  },
+  "intel": {
+    "prototype": "Prototype intelligence environment — koi live national feed nahi.",
+    "overview": "Jaiza",
+    "totalScans": "Total scans",
+    "detectedScams": "Detected scams",
+    "emptyState": "Abhi koi scan record nahi. Scans ke tajziye ke saath metrics populate hongi (public demo mein history disabled hai).",
+    "iocTitle": "Indicator extraction",
+    "iocSubtitle": "Text se indicators (URLs, domains, IPs, emails, phones, wallets) nikalein. Sensitive values masked hain; kuch fetch nahi hota.",
+    "iocPlaceholder": "Indicators nikalne ke liye mashkook text paste karein...",
+    "extract": "Indicators nikalein",
+    "extracting": "Nikala ja raha hai...",
+    "iocNone": "Diye gaye text mein koi indicator nahi mila."
+  },
+  "url": {
+    "subtitle": "Kisi link ko phishing aasar ke liye check karein. Tajziya local hai; link kabhi open nahi hota.",
+    "inputLabel": "Analyze ke liye URL",
+    "analyze": "URL check karein",
+    "analyzing": "Tajziya ho raha hai...",
+    "domain": "Domain",
+    "recommended": "Tajweez karda amal",
+    "indicators": "Aasar",
+    "noIndicators": "Koi local phishing aasar nahi mile (yeh safety ki guarantee nahi).",
+    "integrations": "Bairooni reputation services",
+    "blocked": "Yeh URL ek private/internal address par jata hai aur security ki wajah se block kar diya gaya. Is se rabta nahi kiya gaya."
+  },
+  "settings": {
+    "appearance": "Zahiri shakl",
+    "retention": "Data retention"
+  },
+  "about": {
+    "body": "KHABARDAR aam logon ko English, Urdu aur Roman Urdu mein online scam, phishing aur fraud pehchanne mein madad deta hai.",
+    "prototypeNote": "Yeh ek local prototype environment hai, koi live national service nahi."
+  },
+  "scanner": {
+    "subtitle": "Matn nikalne, QR links pehchanne aur khatrat janchne ke liye screenshot ya QR code tasveer upload karein.",
+    "selectImage": "Tasveer chunein (PNG, JPEG, WEBP — zyada se zyada 10 MB)",
+    "analyze": "Tasveer ka tajziya karein",
+    "analyzing": "Tajziya ho raha hai...",
+    "ocrTitle": "Nikala gaya matn (OCR)",
+    "qrTitle": "QR Code ki aqdar",
+    "urlsTitle": "Mile hue URLs",
+    "textAnalysis": "Matn ka tajziya",
+    "urlAnalysis": "URL ka tajziya",
+    "noText": "Is tasveer mein koi matn nahi mila.",
+    "noQr": "Is tasveer mein koi QR code nahi mila.",
+    "noUrls": "Koi URL nahi mila.",
+    "ocrUnavailable": "Is server par OCR engine dastiyab nahi.",
+    "qrUnavailable": "Is server par QR decoder dastiyab nahi.",
+    "invalidFile": "File ghalat hai. Meharbani karke ek durust PNG, JPEG, ya WEBP tasveer upload karein.",
+    "fileTooLarge": "File bahut bari hai. Zyada se zyada size 10 MB hai.",
+    "preview": "Tasveer ka pesh nazar",
+    "openInAnalyzer": "URL Analyzer mein janchein"
+  },
+  "unavailable": {
+    "notImplemented": "Yeh functionality abhi implement nahi hui. Yeh baad ke marhale mein shamil ki jayegi.",
+    "scopeB": "Yeh ek advanced capability hai jo future release ke liye planned hai. Abhi available nahi.",
+    "disabledAction": "Abhi available nahi"
+  },
+  "home": {
+    "designSystem": {
+      "title": "Design system online hai",
+      "body": "Theme tokens, dark default, aur responsive breakpoints active hain."
+    },
+    "riskSeverity": {
+      "title": "Khatray ki satah",
+      "safe": "MEHFOOZ",
+      "suspicious": "MASHKOOK",
+      "highRisk": "ZYADA KHATRA"
+    },
+    "localOnly": {
+      "title": "Sirf local",
+      "body": "Local tor par chalta hai. Koi data is machine se bahar nahi jata."
+    }
+  }
+}
