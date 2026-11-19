@@ -33,7 +33,16 @@
   },
   "dashboard": {
     "title": "Dashboard",
-    "subtitle": "Choose a tool to get started."
+    "subtitle": "Choose a tool to get started.",
+    "overview": "Overview",
+    "quickAccess": "Quick access",
+    "totalScans": "Total scans",
+    "detectedScams": "Detected scams",
+    "emptyState": "No scans recorded yet. Metrics will populate as scans are analyzed (history is disabled in the public demo).",
+    "toolDetect": "Analyze suspicious text messages",
+    "toolUrl": "Check URLs for phishing indicators",
+    "toolScan": "Extract text and QR from images",
+    "toolIntel": "Extract indicators and view stats"
   },
   "detector": {
     "subtitle": "Paste a suspicious message to check it for scam indicators. Analysis runs locally.",

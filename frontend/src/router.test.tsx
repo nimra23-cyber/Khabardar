@@ -101,10 +101,13 @@ describe("Router: not-implemented pages are honest (no fake functionality)", () 
 describe("NavBar: active-state styling and dashboard entry points", () => {
   it("marks the active destination distinctly", () => {
     renderAt("/detector");
-    const active = screen.getByTestId("nav-detector");
+    // Sidebar renders nav links in both mobile drawer and desktop sidebar.
+    const activeLinks = screen.getAllByTestId("nav-detector");
+    const active = activeLinks[0];
     expect(active.className).toContain("active-nav");
     // A non-active link does not carry the active marker.
-    expect(screen.getByTestId("nav-about").className).not.toContain("active-nav");
+    const aboutLinks = screen.getAllByTestId("nav-about");
+    expect(aboutLinks[0].className).not.toContain("active-nav");
   });
 
   it("dashboard presents entry points to detector/url/scanner/intelligence", () => {

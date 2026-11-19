@@ -1,13 +1,13 @@
-/* Centralized design tokens (palette + theme-aware semantic variables).
-   @import must precede all other statements (CSS spec), so it comes first. */
+/* KHABARDAR — premium cybersecurity design system. */
 @import "./tokens.css";
 
-/* Tailwind layers. */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Base document styling using semantic tokens only (no hardcoded colors). */
+/* Inter font (self-hosted fallback to system-ui). */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
 html,
 body,
 #root {
@@ -18,20 +18,39 @@ body {
   margin: 0;
   background-color: var(--color-bg);
   color: var(--color-fg);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  /* Smooth theme transition without a jarring flash. */
-  transition: background-color 150ms ease, color 150ms ease;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
-/* Prevent horizontal overflow at the root across all viewport widths. */
 html,
 body {
   max-width: 100%;
   overflow-x: hidden;
 }
 
-/* Splash entrance animation (Req 1.4): completes within 300-800ms.
-   Uses a 600ms fade+rise, which is inside the allowed range. */
+/* Custom scrollbar — subtle, professional. */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-default);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-accent);
+}
+
+/* Focus states — accessible ring. */
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Splash entrance animation (Req 1.4). */
 @keyframes splash-enter {
   from {
     opacity: 0;
@@ -42,15 +61,54 @@ body {
     transform: translateY(0);
   }
 }
-
 .splash-enter {
   animation: splash-enter 600ms ease-out both;
 }
 
-/* Reduced-motion: disable the entrance animation but keep content visible.
-   The 2-second auto-transition is driven by JS and is unaffected. */
+/* Reduced-motion. */
 @media (prefers-reduced-motion: reduce) {
   .splash-enter {
     animation: none;
   }
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* Card hover lift — subtle, professional. */
+.card-hover {
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-elevated);
+}
+
+/* Gradient text for headings. */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-metallic-silver));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Loading skeleton shimmer. */
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--color-surface) 25%, var(--color-surface-hover) 50%, var(--color-surface) 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: var(--radius-sm);
+}
+
+/* Score gauge ring animation. */
+@keyframes score-fill {
+  from { stroke-dashoffset: 283; }
+}
+.score-ring-fill {
+  animation: score-fill 800ms ease-out forwards;
 }

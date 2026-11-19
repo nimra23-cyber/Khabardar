@@ -1,10 +1,6 @@
 /**
- * Settings page (Task 1.7 shell).
- *
- * Theme and language controls are genuinely functional (delivered in Tasks
- * 1.4/1.5), so they are shown as working controls. Retention configuration is
- * NOT yet implemented (backend arrives in a later task); it is labeled honestly
- * and not presented as functional.
+ * Settings: premium appearance + retention sections.
+ * Preserves all testids.
  */
 import { useTranslation } from "react-i18next";
 
@@ -14,23 +10,22 @@ import { ThemeToggle } from "../components/ThemeToggle";
 export default function Settings() {
   const { t } = useTranslation();
   return (
-    <div data-testid="page-settings">
-      <h1 className="mb-4 text-2xl font-semibold">{t("nav.settings")}</h1>
+    <div data-testid="page-settings" className="mx-auto max-w-lg space-y-4">
+      <div className="mb-2">
+        <h1 className="text-2xl font-bold tracking-tight">{t("nav.settings")}</h1>
+      </div>
 
-      <section className="mb-4 rounded-lg border border-metallic-silver/30 bg-surface p-4">
-        <h2 className="mb-3 font-medium">{t("settings.appearance")}</h2>
+      <section className="rounded-lg border border-border-subtle bg-surface p-5 shadow-card">
+        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-fg/50">{t("settings.appearance")}</h2>
         <div className="flex flex-wrap items-center gap-4">
           <ThemeToggle />
           <LanguageToggle />
         </div>
       </section>
 
-      <section className="rounded-lg border border-metallic-silver/30 bg-surface p-4">
-        <h2 className="mb-2 font-medium">{t("settings.retention")}</h2>
-        {/* Honest: retention config is not implemented yet. */}
-        <p data-testid="settings-retention-unavailable" className="text-sm text-fg/80">
-          {t("unavailable.notImplemented")}
-        </p>
+      <section className="rounded-lg border border-border-subtle bg-surface p-5 shadow-card">
+        <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-fg/50">{t("settings.retention")}</h2>
+        <p data-testid="settings-retention-unavailable" className="text-sm text-fg/50">{t("unavailable.notImplemented")}</p>
       </section>
     </div>
   );

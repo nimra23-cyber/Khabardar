@@ -33,7 +33,16 @@
   },
   "dashboard": {
     "title": "Dashboard",
-    "subtitle": "Shuru karne ke liye koi tool chunein."
+    "subtitle": "Shuru karne ke liye koi tool chunein.",
+    "overview": "Jaiza",
+    "quickAccess": "Quick access",
+    "totalScans": "Total scans",
+    "detectedScams": "Detected scams",
+    "emptyState": "Abhi koi scan record nahi. Scans ke tajziye ke saath metrics populate hongi (public demo mein history disabled hai).",
+    "toolDetect": "Mashkook messages ka tajziya karein",
+    "toolUrl": "URLs ko phishing aasar ke liye check karein",
+    "toolScan": "Tasveeron se text aur QR nikalein",
+    "toolIntel": "Indicators nikalein aur metrics dekhein"
   },
   "detector": {
     "subtitle": "Mashkook message yahan paste karein taake scam ke aasar check ho sakein. Tajziya local tor par hota hai.",

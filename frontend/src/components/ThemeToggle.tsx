@@ -1,8 +1,5 @@
 /**
- * ThemeToggle: switches between dark and light themes via ThemeContext.
- *
- * Presentation-light on purpose for Task 1.4 (icons/branding arrive later).
- * Uses semantic token utilities only -- no hardcoded colors.
+ * ThemeToggle: compact icon-based theme switcher.
  */
 import { useTranslation } from "react-i18next";
 
@@ -11,18 +8,18 @@ import { useTheme } from "../context/ThemeContext";
 export function ThemeToggle() {
   const { t } = useTranslation();
   const { theme, toggleTheme } = useTheme();
-  const label =
-    theme === "dark" ? t("theme.switchToLight") : t("theme.switchToDark");
+  const label = theme === "dark" ? t("theme.switchToLight") : t("theme.switchToDark");
 
   return (
     <button
       type="button"
       onClick={toggleTheme}
       aria-label={label}
+      title={label}
       data-testid="theme-toggle"
-      className="rounded border border-metallic-silver/30 bg-surface px-3 py-2 text-fg"
+      className="rounded-md border border-border-default bg-surface px-2 py-1.5 text-xs text-fg/70 transition-base hover:bg-surface-hover hover:text-fg"
     >
-      {t("theme.label")}: {theme}
+      <span className="hidden desktop:inline">{t("theme.label")}</span>: {theme}
     </button>
   );
 }

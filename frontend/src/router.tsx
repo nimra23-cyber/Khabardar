@@ -21,7 +21,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 
-import { NavBar } from "./components/NavBar";
+import { Sidebar } from "./components/Sidebar";
 import About from "./pages/About";
 import Dashboard from "./pages/Dashboard";
 import Detector from "./pages/Detector";
@@ -41,12 +41,12 @@ function SplashRoute() {
   return <Splash onDone={() => navigate("/dashboard", { replace: true })} />;
 }
 
-/** App layout: persistent navigation + routed page content. */
+/** App layout: sidebar + main content area. */
 function AppLayout() {
   return (
     <div className="min-h-full bg-bg text-fg">
-      <NavBar />
-      <main className="px-4 py-6 tablet:px-6 desktop:px-8">
+      <Sidebar />
+      <main className="min-h-full px-4 py-6 tablet:px-6 desktop:ml-60 desktop:px-8">
         <Suspense fallback={null}>
           <Outlet />
         </Suspense>
